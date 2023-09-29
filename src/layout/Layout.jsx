@@ -1,10 +1,11 @@
 import Navbar from "../component/Navbar.jsx";
 
 
-function Layout() {
+function Layout({children}) {
     return (
         <div>
             <Navbar/>
+            {children}
         </div>
     );
 }
