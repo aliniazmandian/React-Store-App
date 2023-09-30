@@ -1,14 +1,20 @@
 import Layout from "../layout/Layout.jsx";
 import {useRqProductFetcher} from "../Hooks/react-query/useRqProductFetcher.js";
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart} from "../Features/Cart/cartSlice.js";
 
 
 function Home() {
 
+    const cart = useSelector((state)=>state.cart.value)
+    const dispatch = useDispatch()
 
  const  {isLoading,data,isError,error,refetch} =   useRqProductFetcher(0)
 
-     const addToCartHandler = (productId)=>{
-         console.log(productId)
+     const addToCartHandler = (product)=>{
+         console.log(product)
+         console.log(cart)
+         dispatch(addToCart(product))
      }
 
 
@@ -38,7 +44,7 @@ function Home() {
                                    </div>
                                    <button
                                        className={'bg-blue-400 hover:bg-gray-700 active:bg-blue-50 '}
-                                       onClick={()=>addToCartHandler(product.id)}
+                                       onClick={()=>addToCartHandler(product)}
                                    >Add to cart
                                    </button>
                                </div>
