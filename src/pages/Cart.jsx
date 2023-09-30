@@ -1,7 +1,11 @@
+import Layout from "../layout/Layout.jsx";
 
 function Cart() {
     return (
-        <div> CART PAGE </div>
+        <Layout>
+            <div> CART PAGE </div>
+        </Layout>
+
     );
 }
 
