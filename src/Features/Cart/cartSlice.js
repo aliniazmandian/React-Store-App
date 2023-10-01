@@ -18,14 +18,25 @@ export const cartSlice = createSlice({
             }else {
                 state.value[updatedCartIndex].quantity++
             }
-
-
         },
+        deleteItem:(state, action)=>{
+            const indexOfDeleteObject = state.value.findIndex((item)=>item.id === action.payload.id)
+
+            if (indexOfDeleteObject >= 0){
+                if(state.value[indexOfDeleteObject].quantity > 1){
+                    state.value[indexOfDeleteObject].quantity --
+                }else {
+                    state.value.splice(indexOfDeleteObject,1)
+                }
+
+            }
+
+        }
 
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { addToCart } = cartSlice.actions
+export const { addToCart, deleteItem } = cartSlice.actions
 
 export default cartSlice.reducer
