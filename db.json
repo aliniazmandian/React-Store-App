@@ -3,13 +3,13 @@
     {
       "id": 1,
       "name": "camera",
-      "price": "2000",
+      "price": 2000,
       "image" : "./src/assets/camera.avif"
     },
     {
       "id": 2,
       "name": "head phone",
-      "price": "100",
+      "price": 100,
       "image" : "./src/assets/headPhone.avif"
     }
   ]

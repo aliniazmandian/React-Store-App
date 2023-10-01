@@ -8,11 +8,14 @@ function Navbar() {
     const cart= useSelector((state)=>state.cart.value)
     const [totalCartQuantity,setTotalCartQuantity] = useState()
     useEffect(()=>{
-        const total = cart.reduce((a,b)=> {
+        if (cart){
+            let total = cart?.reduce((a,b)=> {
+                return   a + b.quantity
+            },0 )
+            setTotalCartQuantity(total)
+        }
 
-         return   a + b.quantity
-        },0 )
-       setTotalCartQuantity(total)
+
     },[cart])
 
     return (
