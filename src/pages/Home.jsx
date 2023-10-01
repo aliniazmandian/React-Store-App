@@ -12,8 +12,8 @@ function Home() {
  const  {isLoading,data,isError,error,refetch} =   useRqProductFetcher(0)
 
      const addToCartHandler = (product)=>{
-         console.log(product)
-         console.log(cart)
+         // console.log(product)
+         // console.log(cart)
          dispatch(addToCart(product))
      }
 
