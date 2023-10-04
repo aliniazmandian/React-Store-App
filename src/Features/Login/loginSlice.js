@@ -17,14 +17,19 @@ export const loginSlice = createSlice({
     initialState,
     reducers : {
         login : (state,action)=>{
-            if(FAKE_USER.email === action.payload.email && FAKE_USER.password === action.payload.password ){
+            console.log(action.payload)
+            if(FAKE_USER.email === action.payload.emailInput && +FAKE_USER.password === +action.payload.passwordInput ){
                 state.value.user = action.payload.email
+                console.log('login')
                 state.value.authenticated = true
+            }else {
+                console.log(' incorrect name or password')
             }
         },
         logout : (state)=>{
             state.value.user = null
             state.value.authenticated = false
+            console.log('logout')
         },
     }
 })
