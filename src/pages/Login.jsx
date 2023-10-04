@@ -16,7 +16,7 @@ function Login() {
     const navigate = useNavigate()
 
     useEffect(()=>{
-        if (authenticated === true) navigate('/')
+        if (authenticated === true) navigate('/',{replace:true})
     },[authenticated,navigate])
 
     const emailInputChangeHandler = (e)=>{
