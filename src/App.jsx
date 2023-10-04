@@ -4,6 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
+import ProtectedRoute from "./protectedRoutes/ProtectedRoute.jsx";
 
 function App() {
 
@@ -13,7 +14,14 @@ function App() {
 
             <Routes>
                 <Route path={"/"} element={<Home/>} ></Route>
-                <Route path={"/cart"} element={<Cart/>} ></Route>
+                <Route path={"/cart"}
+                       element={
+                           <ProtectedRoute>
+                               <Cart/>
+                           </ProtectedRoute>
+                } >
+
+                </Route>
                 <Route path={'login'} element={<Login/>}></Route>
             </Routes>
 
