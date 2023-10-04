@@ -1,14 +1,23 @@
-import { useState} from "react";
+import {useEffect, useState} from "react";
 import {login} from "../Features/Login/loginSlice.js";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 
 function Login() {
 
 
-    const [emailInput,setEmailInput] = useState()
-    const [passwordInput,setPassWordInput]=useState()
+
+
+    const [emailInput,setEmailInput] = useState('')
+    const [passwordInput,setPassWordInput]=useState('')
     const dispatch= useDispatch()
+    const authenticated = useSelector((state)=>state.login.value.authenticated)
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        if (authenticated === true) navigate('/')
+    },[authenticated,navigate])
 
     const emailInputChangeHandler = (e)=>{
         setEmailInput(e.target.value)
