@@ -3,7 +3,7 @@ import './App.css'
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Cart from "./pages/Cart.jsx";
-import Layout from "./layout/Layout.jsx";
+import Login from "./pages/Login.jsx";
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
             <Routes>
                 <Route path={"/"} element={<Home/>} ></Route>
                 <Route path={"/cart"} element={<Cart/>} ></Route>
+                <Route path={'login'} element={<Login/>}></Route>
             </Routes>
 
 
