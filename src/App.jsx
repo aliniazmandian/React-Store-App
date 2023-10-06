@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import ProtectedRoute from "./protectedRoutes/ProtectedRoute.jsx";
+import Product from "./pages/Product.jsx";
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
 
                 </Route>
                 <Route path={'login'} element={<Login/>}></Route>
+                <Route path={'/product'} element={<Product/>}></Route>
             </Routes>
 
 

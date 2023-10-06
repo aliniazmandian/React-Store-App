@@ -22,7 +22,7 @@ function Navbar() {
     }
 
     useEffect(()=>{
-        console.log(isAuthenticated)
+        // console.log(isAuthenticated)
     },[isAuthenticated])
 
 
